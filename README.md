@@ -1,2 +1,4 @@
-# node-shopping-list-v2
-v2 of shopping list for Node course
+Shopping list v3
+================
+
+https://github.com/Thinkful-Ed/node-shopping-list-v3
