@@ -79,6 +79,12 @@ app.put('/shopping-list/:id', jsonParser, (req, res) => {
   res.status(204).json(updatedItem);
 });
 
+app.delete('/shopping-list/:id', (req, res) => {
+  ShoppingList.delete(req.params.id);
+  console.log(`Deleted shopping list item \`${req.params.ID}\``);
+  res.status(204).end();
+});
+
 
 // when new recipe added, ensure has required fields. if not,
 // log error and return 400 status code with hepful message.
