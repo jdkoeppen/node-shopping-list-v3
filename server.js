@@ -53,7 +53,7 @@ app.post('/shopping-list', jsonParser, (req, res) => {
 // of that, log error and send back status code 400. otherwise
 // call `ShoppingList.update` with updated item.
 app.put('/shopping-list/:id', jsonParser, (req, res) => {
-  const requiredFields = ['name', 'checked', 'id'];
+  const requiredFields = ['name', 'budget', 'id'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -73,7 +73,7 @@ app.put('/shopping-list/:id', jsonParser, (req, res) => {
   const updatedItem = ShoppingList.update({
     id: req.params.id,
     name: req.body.name,
-    checked: req.body.checked
+    budget: req.body.budget
   });
   res.status(204).json(updatedItem);
 });
